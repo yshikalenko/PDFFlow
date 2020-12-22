@@ -125,7 +125,7 @@ To install the framework use the following link: https://dotnet.microsoft.com/do
 # Purpose
 The example shows how to create a “Bank Account Statement”, that is a complex multi-page document. See Fig. 1, Fig. 2, Fig. 3 and Fig. 4.
 
-Below in brackets are the names of the blocks highlighted in the figures with brown rectangles.
+Below in brackets are the names of the blocks highlighted in the figures with blue rectangles.
 
 The first or front page consists of
 * Title with bank name;
@@ -154,18 +154,20 @@ The last page consists of
 * Balance calculation;
 * Footer.
 
-
-
-![Fig. 1](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementFirstPage.png "The first page")
+![Fig. 1](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountIll.png "The first page")
 Fig. 1
 
-![Fig. 2](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementSecondPage1.png "The second page")
+
+![Fig. 1](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountIll-1-1.png "The first page")
+Fig. 1
+
+![Fig. 2](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountIll-2-1.png "The second page")
 Fig. 2
 
-![Fig. 3](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementSecondPage2.png "The third page")
+![Fig. 3](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountIll-3.png "The third page")
 Fig. 3
 
-![Fig. 4](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementLastPage.png "The last page")
+![Fig. 4](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountIll-4.png "The last page")
 Fig. 4
 
 ### Description
