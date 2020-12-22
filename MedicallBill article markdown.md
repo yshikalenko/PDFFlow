@@ -4,6 +4,58 @@
 
 The example source is available in [PDF.Flow.Examples repository](https://github.com/gehtsoft-usa/PDF.Flow.Examples/tree/master/Examples/MedicalBill).
 
+
+**Table of Contents**  
+
+- [Prerequisites](#prerequisites)
+- [Purpose](#purpose)
+    - [Description](#description)
+          - [Output file](#output-file)
+      - [1. Open the project in Visual Studio](#1-open-the-project-in-visual-studio)
+      - [2. Run the sample application](#2-run-the-sample-application)
+      - [3. Source code structure](#3-source-code-structure)
+      - [4. Class Program](#4-class-program)
+      - [5. The MedicalBillRunner class](#5-the-medicalbillrunner-class)
+      - [6. The MedicalBillBuilder class](#6-the-medicalbillbuilder-class)
+      - [7. The MedicalBillFrontBuilder class](#7-the-medicalbillfrontbuilder-class)
+    - [8.The MedicalBillBackBuilder class](#8the-medicalbillbackbuilder-class)
+    - [9. The MedicalBillHeadBuilder class](#9-the-medicalbillheadbuilder-class)
+      - [10. The MedicalBillBodyBuilder class](#10-the-medicalbillbodybuilder-class)
+      - [11. The MedicalBillBottomBuilder class](#11-the-medicalbillbottombuilder-class)
+          - [The BuildBeforeCut method](#the-buildbeforecut-method)
+          - [The BuildCut method](#the-buildcut-method)
+          - [The BuildAfterCut method](#the-buildaftercut-method)
+          - [The BuildPayment method](#the-buildpayment-method)
+          - [The BuildCheck method](#the-buildcheck-method)
+          - [The FillCheckTable method](#the-fillchecktable-method)
+          - [The  BuildCard method](#the--buildcard-method)
+          - [The  AddCardHead method](#the--addcardhead-method)
+          - [The FillCardNames method](#the-fillcardnames-method)
+          - [The FormBuilder.AddForm method](#the-formbuilderaddform-method)
+          - [The BuildPostNet method](#the-buildpostnet-method)
+    - [12. The MedicalBillBackTextBuilder class](#12-the-medicalbillbacktextbuilder-class)
+          - [The AddTexts method](#the-addtexts-method)
+              - [The StringWithUrl class](#the-stringwithurl-class)
+              - [The Text class](#the-text-class)
+              - [The Link class](#the-link-class)
+              - [The AddFirstBlock method](#the-addfirstblock-method)
+              - [The AddNextBlock method](#the-addnextblock-method)
+              - [The AddBlockTitle method](#the-addblocktitle-method)
+              - [The AddBlockText method](#the-addblocktext-method)
+              - [The AddListBlock method](#the-addlistblock-method)
+      
+      - [The AddBlockList method](#the-addblocklist-method)
+      - [The AddTextOrUrl method](#the-addtextorurl-method)
+      - [The AddLink method](#the-addlink-method)
+      - [The AddText method](#the-addtext-method)
+    - [13. The MedicalBillBackClientInfoBuilder class](#13-the-medicalbillbackclientinfobuilder-class)
+      - [The AddInfoTitle method](#the-addinfotitle-method)
+      - [The AddClientTable method](#the-addclienttable-method)
+      - [The FillAboutYouTable method](#the-fillaboutyoutable-method)
+      - [The FormBuilder.AddRadioButtons method](#the-formbuilderaddradiobuttons-method)
+      - [The FillInsuranceTable method](#the-fillinsurancetable-method)
+
+
 # Prerequisites
 1) **Visual Studio 2017** or above is installed.
 To install a community version of Visual Studio use the following link: https://visualstudio.microsoft.com/vs/community/
@@ -13,7 +65,7 @@ Please make sure that the way you are going to use Visual Studio is allowed by t
 To install the framework use the following link: https://dotnet.microsoft.com/download
 
 # Purpose
-The example shows how to create a “Medical Bill” that is a complex two-page document. See Fig. 1 and Fig. 2.
+The example shows how to create a “Medical Bill” that is a complex two-page document. See Fig. 1.
 
 Images below show the main blocks of the document highlighted in with brown rectangles.
 
@@ -27,13 +79,13 @@ The second, or the back page is a form for the client to fill in the information
 * Text
 * Form
 
-![Fig. 1](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/MedicalBillFront.png "The front page")
+![Fig. 1](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/Medical_Bill_Ill.png "The  pages")
+
 Fig. 1
 
-![Fig. 2](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/MedicalBillBack1.png "The back page")
-Fig. 2
+### Description
 
-### Output file
+###### Output file
 The example creates the **Medical.pdf** file in the output **bin/(debug|release)/netcoreapp2.1** folder, unless specified otherwise in the command line.
 
 #### 1. Open the project in Visual Studio
@@ -179,10 +231,11 @@ This responsibility is performed by the Build method. It creates the objects in 
 ### 9. The **MedicalBillHeadBuilder** class
 
 Responsibility:
-* Create the Header of the page. See. Fig. 3.
+* Create the Header of the page. See. Fig. 2.
 
-![Fig. 3](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/MedicalBillFrontHead.png "The front side header")
-Fig. 3
+![Fig. 2](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/MedicalBillFrontHead.png "The front side header")
+
+Fig. 2
 
 The responsibility is performed by the **BuildHead** method.
 
@@ -235,9 +288,10 @@ etc.
 #### 10. The MedicalBillBodyBuilder class
 
 Responsibility:
-* Create the table of the Medicall Bil calculationl. See. Fig. 4
-![Fig. 4](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/MedicalBillFrontBody.png "The front side of the table of calculation")
-Fig. 4
+* Create the table of the Medicall Bil calculationl. See. Fig. 3
+![Fig. 3](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/MedicalBillFrontBody.png "The front side of the table of calculation")
+
+Fig. 3
 
 The responsibility is performed by the **BuildBody** method
 
@@ -294,9 +348,10 @@ etc.
 #### 11. The MedicalBillBottomBuilder class
 
 Responsibility:
-* Create the bottom part of the Medicall Bill. See. Fig. 5
-![Fig. 5](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/MedicalBillFrontBottom.png "The front side of the table of calculation")
-Fig. 5
+* Create the bottom part of the Medicall Bill. See. Fig. 4
+![Fig. 4](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/MedicalBillFrontBottom.png "The front side of the table of calculation")
+
+Fig. 4
 
 The responsibility is performed by the **BuildBottom** method.
 
@@ -454,6 +509,7 @@ The method fills the table with information for the payment by check and sets th
 
 The method creates information for the payment by credit card.
 The information consists of 
+
 * a form for choosing card types;
 * a form with 4 rows for filling credit card details.
 
@@ -561,8 +617,9 @@ This information represents 2 identical blocks at the very bottom of the front p
 ### 12. The **MedicalBillBackTextBuilder** class
 
 Responsibility: Create the block of text on the second (the back) page of the document
-![Fig. 6](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/MedicalBillBackText.png "The text of the back page")
-Fig. 6. 
+![Fig. 5](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/MedicalBillBackText.png "The text of the back page")
+
+Fig. 5. 
 
 This responsibility is performed by the **AddTexts** method.
 
@@ -808,7 +865,8 @@ The method adds a peice of text to the paragraph.
 
 Responsibility: Build the block of forms on the second (the back) page of the document. 
 ![Fig. 6](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/MedicalBillBackForm.png "The back side of the Form")
-Fig. 7. 
+
+Fig. 6. 
 
 This responsibility is performed by the **Build** method.
 
