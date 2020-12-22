@@ -104,7 +104,7 @@ Please make sure that the way you are going to use Visual Studio is allowed by t
 To install the framework use the following link: https://dotnet.microsoft.com/download
 
 # Purpose
-The example shows how to create a “Bank Account Statement”, that is a complex multi-page document. See Fig. 1, Fig. 2, Fig. 3 and Fig. 4.
+The example shows how to create a “Bank Account Statement”, that is a complex multi-page document. See Fig. 1.
 
 Below in brackets are the names of the blocks highlighted in the figures with blue rectangles.
 
@@ -135,21 +135,7 @@ The last page consists of
 * Balance calculation;
 * Footer.
 
-![Fig. 1](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccount_Ill.png "The first page")
-Fig. 1
-
-
-![Fig. 1](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountIll-1-1.png "The first page")
-Fig. 1
-
-![Fig. 2](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountIll-2-1.png "The second page")
-Fig. 2
-
-![Fig. 3](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountIll-3.png "The third page")
-Fig. 3
-
-![Fig. 4](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountIll-4.png "The last page")
-Fig. 4
+  ![Fig. 1](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccount_Ill.png "The first page")																				Fig. 1
 
 ### Description
 ###### Output file
@@ -433,11 +419,12 @@ The Title on the first page (See Fig. 3) is different from the Title on the othe
 It contains 
 
 * The Bank Name;
-* The text common to all pages: the account number, the start and end dates of the account statement, and the page numbers;
-* The bank logo common to all pages.
 
-![Fig. 5](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementFirstTitle.png "The first page title")
-Fig. 5
+* The text common to all pages: the account number, the start and end dates of the account statement, and the page numbers;
+
+* The bank logo common to all pages.
+![Fig. 2](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/First_Title.png "The first page title")
+  																	Fig. 2
 
 In order to avoid a code duplication, the creating of the Title on the first and other pages is performed using methods of the **BankAccountStatement** class that is the base for the page building classes. 
 
@@ -556,7 +543,7 @@ The method adds the bank logo to the table's cell.
 
 ###### The AddTwoPanels method
 
-The **BankAccountStatementFirstPageBuilder.Build** uses the **AddTwoPanels** method to create 2 blocks of the same type. See Fig. 6 and Fig. 7.
+The **BankAccountStatementFirstPageBuilder.Build** uses the **AddTwoPanels** method to create 2 blocks of the same type. See Fig. 3 and Fig. 4.
 
 To add the content of the blocks, 2 parameters are passed to the method: 
 the actions to fill the left and right parts of the each block. 
@@ -601,17 +588,20 @@ The method takes the parameters:
 
 ```
 
-![Fig. 6](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementFirst2Panel1.png "Two panels 1")
-Fig. 6
 
-To create the block in Fig. 6, the  **BankAccountStatementFirstPageBuilder.Build** passes the following actions to the **AddTwoPanels**:
+
+![Fig. 3](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementFirst2Panel1.png "Two panels 1")
+
+​																				Fig. 3
+
+To create the block in Fig. 3, the  **BankAccountStatementFirstPageBuilder.Build** passes the following actions to the **AddTwoPanels**:
 
 * The **AddCompanyName** method;
 * The **AddQuestions** method.
 
 ###### The AddCompanyName method
 
-The method adds the text paragraph with the Bank Name to the table cell to fill the left part of the block shown in Fig. 6
+The method adds the text paragraph with the Bank Name to the table cell to fill the left part of the block shown in Fig. 3
 ```csharp
         private void AddCompanyName(TableCellBuilder cellBuilder)
         {
@@ -624,7 +614,7 @@ The method adds the text paragraph with the Bank Name to the table cell to fill 
 
 ###### The AddQuestions method
 
-The method to fill the right part of the block shown in Fig. 6
+The method to fill the right part of the block shown in Fig. 3
 * Adds the title of "*Questions?*" using the **Helper.AddParagraph** method;
 * Adds the text paragraph of "*Available by phone 24 hours...*" using the **Helper.AddParagraph**;
 * Adds the text paragraph with the text with different fonts of "1-800-CALL-XXXXX(1-234-567-8900)";
@@ -645,17 +635,20 @@ The method to fill the right part of the block shown in Fig. 6
 
 ```
 
-![Fig. 7](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementFirst2Panel2.png "Two panels 2")
-Fig. 7
 
-To create the block shown in Fig. 7, the **BankAccountStatementFirstPageBuilder.Build** passes the following actions to the **AddTwoPanels** method:
+
+![Fig. 4](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementFirst2Panel2.png "Two panels 2")
+
+​																					Fig. 4
+
+To create the block shown in Fig. 4, the **BankAccountStatementFirstPageBuilder.Build** passes the following actions to the **AddTwoPanels** method:
 
 * The **AddActivitySummary** method;
 * The **AddAccountInfo** method.
 
 ###### The AddActivitySummary method
 
-The method to fill the left part of the block shown in Fig. 7
+The method to fill the left part of the block shown in Fig. 4
 * adds the nested table to the cell of the external table;
 * fills the table using the **FillActivitySummaryTable** method.
 
@@ -726,7 +719,7 @@ The method to fill the table by the data of the account summary
 
 The method adds the rows to the table and fills them using the **Field** array with the data of the account summary.
 
-The rows' cells have 4 different styles (See Fig. 7):
+The rows' cells have 4 different styles (See Fig. 4):
 * The text of the 4th row must have the Bold font;
 * The right cell must have the Right align.
 
@@ -784,7 +777,7 @@ Therefore, the method first defines 4 styles. Then, the method adds the rows app
 
 ###### The AddAccountInfo method
 
-The right part of the block consists of 7 paragraphs with different styles (See Fig. 7). The method adds them using the **Helper.AddParagraph** method that takes the parameter of the **Gehtsoft.PDFFlow.Builder.TableCellBuilder** class. 
+The right part of the block consists of 7 paragraphs with different styles (See Fig. 4). The method adds them using the **Helper.AddParagraph** method that takes the parameter of the **Gehtsoft.PDFFlow.Builder.TableCellBuilder** class. 
 
 ```csharp
         private void AddAccountInfo(TableCellBuilder outerCellBuilder)
@@ -805,10 +798,11 @@ The right part of the block consists of 7 paragraphs with different styles (See 
 
 ###### The AddOptions method
 
-The method creates the **Options** block. See Fig. 8
+The method creates the **Options** block. See Fig. 5
 
-![Fig. 8](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementFirstOptions.png "Options")
-Fig. 8
+![Fig. 5](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementFirstOptions.png "Options")
+
+​																				Fig. 5
 
 The column is the table with 2 columns with
 * The "*Your Business and SampleBank*" text in the left column;
@@ -849,7 +843,7 @@ The cells are filled using the **AddYourBusiness** and **AddOptionsToCell** meth
 
 ###### The AddYourBusiness method
 
-The method fills the left part of the block shown in Fig. 8 by the text. 
+The method fills the left part of the block shown in Fig. 5 by the text. 
 The method adds the paragraph with the "*Your Business and SampleBank*" text using the **Helper.AddParagraph** method. 
 The method sets the next paragraph since the paragraph has the URL added using the **ParagraphBuilder.SetUrlStyle** and **ParagraphBuilder.AddUrlToParagraph**. 
 
@@ -879,7 +873,7 @@ The method sets the next paragraph since the paragraph has the URL added using t
 
 ###### The AddOptionsToCell method
 
-The method fills the right part of the block shown in Fig. 8 by the text and the checkboxes.
+The method fills the right part of the block shown in Fig. 5 by the text and the checkboxes.
 The method adds the paragraph with the "*Account options*" text using the **Helper.AddParagraph** method.
 The method sets the next paragraph since the paragraph has the URL added using the **ParagraphBuilder.SetUrlStyle** and **ParagraphBuilder.AddUrlToParagraph**. 
 The checkboxes are added using the **AddCheckBoxes** method with the **Field** array.  One **Field** is for one checkbox.
@@ -953,10 +947,11 @@ The method adds one row for each checkbox, adds the label rows and the checkbox 
 
 ###### The AddAdvt method
 
-The method creates the **Advertisement** block. See Fig. 9.
+The method creates the **Advertisement** block. See Fig. 6.
 
-![Fig. 9](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementFirstAdvt.png "Advertisement")
-Fig. 9
+![Fig. 6](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementFirstAdvt.png "Advertisement")
+
+​																		Fig. 6
 
 The method adds the line separating this block from the previous block. The method adds the paragraph with the advertisement text using the **Helper.AddParagraph**.
 
@@ -1000,14 +995,14 @@ The **BankAccountStatementSecondPageBuilder.Build** method performs responsibili
 
 ###### The Title display
 
-All *Titles* from the second page (See Fig. 10) contain
+All *Titles* from the second page (See Fig. 7) contain
 
 * The *Title* text common to all pages: the account number, the start and end dates of the account statement, and the page numbers;
 * The bank logo common to all pages.
 
+![Fig. 7](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementNextTitle.png "The next page title")
 
-![Fig. 10](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementNextTitle.png "The next page title")
-Fig. 10
+​																				Fig. 7
 
 The separate parts of the Title are created using the method of the **BankAccountStatement.AddTitle** base class. 
 
@@ -1026,10 +1021,11 @@ It calls the **BankAccountStatement.AddTextTitle** method to add the common text
 
 ###### The AddOverdraftProtection method
 
-The method adds the "**Overdraft Protection**" block shown in Fig. 11.
+The method adds the "**Overdraft Protection**" block shown in Fig. 8.
 
-![Fig. 11](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementNextOverdraftProtection.png "Overdraft Protection")
-Fig. 11
+![Fig. 8](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementNextOverdraftProtection.png "Overdraft Protection")
+
+​																			Fig. 8
 
 
 The paragraph is added using the **Helper.AddParagraph** method that takes the object of the **Gehtsoft.PDFFlow.Builder.SectionBuilder** class as the parameter.
@@ -1040,10 +1036,11 @@ The method adds
 
 ###### The AddTransactionHistory method
 
-The method adds the "**Transaction history**" block shown in Fig. 12.
+The method adds the "**Transaction history**" block shown in Fig. 9.
 
-![Fig. 12](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementNextTransactionhistory.png "Transaction history")
-Fig. 12
+![Fig. 9](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementNextTransactionhistory.png "Transaction history")
+
+​																							Fig. 9
 
 In order to add the block, the method
 * Adds the line and the "*Transaction history*" title using the **AddStatementsHeadLine** method;
@@ -1253,10 +1250,11 @@ The method adds the "*The Ending Daily Balance does not reflect...*" text below 
 
 ###### The AddServiceFeeSummary method
 
-The method adds the "**Service fee summary**" block shown in Fig. 13.
+The method adds the "**Service fee summary**" block shown in Fig. 10.
 
-![Fig. 13](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementNextFeesummary.png "Service fee summary")
-Fig. 13
+![Fig. 10](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementNextFeesummary.png "Service fee summary")
+
+​																					Fig. 10
 
 The block consists of 
 * The text paragraph with the "*Monthly service fee summary*" title;
@@ -1488,9 +1486,11 @@ The method adds the rows to the *ServiceFeeSummary* table using the passed array
 
 ###### The AddTransactionFeeSummary method
 
-The method adds the "**Transaction fee summary**" block shown in Fig. 14.
+The method adds the "**Transaction fee summary**" block shown in Fig. 11.
 
-![Fig. 14](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementNextServicefeesummary1.png "Transaction fee summary") Fig. 14
+![Fig. 11](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementNextServicefeesummary1.png "Transaction fee summary") 
+
+​																					Fig. 11
 
 The block consists of 
 * the line;
@@ -1666,9 +1666,11 @@ The **BankAccountStatementLastPageBuilder.Build method** performs responsibiliti
 
 ###### The AddGeneralStatementPolicies methods
 
-The method adds the "**Polices**" block shown in Fig. 15.
+The method adds the "**Polices**" block shown in Fig. 12.
 
-![Fig. 15](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementLastPolices.png "Polices") Fig. 15
+![Fig. 12](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementLastPolices.png "Polices") 
+
+​																					Fig. 12
 
 The method adds the paragraph with the "*General statement policies for SampleBank*" title using the **Helper.AddParagraph** method that takes the parameter of the **Gehtsoft.PDFFlow.Builder.RepeatingAreaBuilder** class.
 
@@ -1721,12 +1723,15 @@ The method adds 2 columns and one row to the table and adds the **Polices** text
 
 ###### The AddAccountBalanceCalculationWorksheet method
 
-The method adds the "**Instructions**" and the "**Balance calculation**" blocks to the page. See Fig. 16.
+The method adds the "**Instructions**" and the "**Balance calculation**" blocks to the page. See Fig. 13.
 
-![Fig. 16](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementLastWorksheet.png "Polices") Fig. 16
+![Fig. 13](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/Instruction-calculation.png "Polices") 
+
+​																							Fig. 13
 
 The block is the part of the page with 2 columns.
 Therefore, the method uses  
+
 * The **Gehtsoft.PDFFlow.Builder.SectionBuilder.AddRptAreaLeftToBothPages** to add the left column with the "**Instructions**" block;
 * The **Gehtsoft.PDFFlow.Builder.SectionBuilder.AddRptAreaRightToBothPages** to add the right column with the "**Balance calculation** block. 
 
@@ -1795,11 +1800,13 @@ The method creates the array of the the rows.
 ```
 
 ###### The methods: AddInstuctionAboutENTER, AddInstuctionAboutADD, AddInstuctionAboutSUBTRACT
-The methods add the the "**Instructions**" block. See Fig. 17.
+The methods add the the "**Instructions**" block. See Fig. 14.
 
-![Fig. 17](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementLastWorksheetInstrt.png "Instructions") Fig. 17
+![Fig. 14](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/Instruction2.png "Instructions") 
 
-The figure is divided by brown horizontal lines into the parts added by each method.
+​																							Fig. 14
+
+The figure is divided the 3 parts added by each method.
 
 These parts are the same type, but with different and complex content. The fact that the parts are the same type is reflected by the code methods that are almost the same. 
 Each method:
@@ -1836,7 +1843,7 @@ The method sets the table. The method adds 2 columns of the specified width and 
 
 ###### The methods: **FillEndingBalanceENTER**, **FillInstructionAnyDeposits**, **FillInstructionAnyWithdrawals**
 
-The methods add the columns with instructions below the title of the instructions (the parts in Fig. 17 highlighted with brown rectangles)
+The methods add the columns with instructions below the title of the instructions (the parts in Fig. 14 highlighted with blue rectangles)
 Each method
 
 * Creates the table for the item name and the instructions;
@@ -1977,9 +1984,9 @@ It is used by the method:
 ```
 
 ###### The methods: **AddEndingBalanceForm**, **AddAnyDepositsForm**, **AddAnyWithdrawalsForm**
-The methods add the input forms in the "**Instructions**" block highlighted in Fig 18 with brown rectangles. 
+The methods add the input forms in the "**Instructions**" block highlighted in Fig 18 with blue rectangles. 
 
-![Fig. 18](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementLastWorksheetForms.png "Forms") Fig. 18
+![Fig. 18](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/Instruction3.png "Forms") Fig. 18
 
 The methods add different number of the form rows using the **Helper.AddFormRow**:
 
