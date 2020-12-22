@@ -19,9 +19,9 @@ The example source is available in [repo](https://github.com/gehtsoft-usa/PDF.Fl
       - [5. The BankAccountStatementRunner class](#5-the-bankaccountstatementrunner-class)
         - [The data format](#the-data-format)
         - [The *sample-statement-data.json* file and Model.Statement class](#the-sample-statement-datajson-file-and-modelstatement-class)
-          - [The **Model.Statement** class:](#the-modelstatement-class)
+          - [The Model.Statement class:](#the-modelstatement-class)
         - [The *sample-statement-info-data.json* and the Model.Statement class](#the-sample-statement-info-datajson-and-the-modelstatement-class)
-          - [The **Model.StatementInfo** class:](#the-modelstatementinfo-class)
+          - [The Model.StatementInfo class:](#the-modelstatementinfo-class)
       - [6. The BankAccountStatementBuilder class](#6-the-bankaccountstatementbuilder-class)
       - [7. The BankAccountStatementFirstPageBuilder class](#7-the-bankaccountstatementfirstpagebuilder-class)
       - [The Title display](#the-title-display)
@@ -76,13 +76,13 @@ The example source is available in [repo](https://github.com/gehtsoft-usa/PDF.Fl
           - [The methods: AddInstuctionAboutENTER, AddInstuctionAboutADD, AddInstuctionAboutSUBTRACT](#the-methods-addinstuctionaboutenter-addinstuctionaboutadd-addinstuctionaboutsubtract)
           - [The AddInstructionTitle method](#the-addinstructiontitle-method)
           - [The ConfigureDescriptionFormTable method](#the-configuredescriptionformtable-method)
-          - [The methods: **FillEndingBalanceENTER**, **FillInstructionAnyDeposits**, **FillInstructionAnyWithdrawals**](#the-methods-fillendingbalanceenter-fillinstructionanydeposits-fillinstructionanywithdrawals)
+          - [The methods: FillEndingBalanceENTER, FillInstructionAnyDeposits, FillInstructionAnyWithdrawals](#the-methods-fillendingbalanceenter-fillinstructionanydeposits-fillinstructionanywithdrawals)
           - [The AddDescriptionRow method](#the-adddescriptionrow-method)
           - [The AddDescriptionToCell method](#the-adddescriptiontocell-method)
           - [The AddCalculateDescriptionToCell method](#the-addcalculatedescriptiontocell-method)
           - [The AddWithdrawalsDescriptionToCell method](#the-addwithdrawalsdescriptiontocell-method)
           - [The AddCalculateEndingBalanceDescriptionToCell method](#the-addcalculateendingbalancedescriptiontocell-method)
-          - [The methods: **AddEndingBalanceForm**, **AddAnyDepositsForm**, **AddAnyWithdrawalsForm**](#the-methods-addendingbalanceform-addanydepositsform-addanywithdrawalsform)
+          - [The methods: AddEndingBalanceForm, AddAnyDepositsForm, AddAnyWithdrawalsForm](#the-methods-addendingbalanceform-addanydepositsform-addanywithdrawalsform)
           - [The AddBalanceCalc method](#the-addbalancecalc-method)
       - [10. The Helper class](#10-the-helper-class)
           - [The AddParagraph methods](#the-addparagraph-methods)
@@ -135,7 +135,7 @@ The last page consists of
 * Balance calculation;
 * Footer.
 
-  ![Fig. 1](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccount_Ill.png "The first page")																				Fig. 1
+  ![Fig. 1](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccount_Ill.png "The first page")                                                                              Fig. 1
 
 ### Description
 ###### Output file
@@ -424,7 +424,7 @@ It contains
 
 * The bank logo common to all pages.
 ![Fig. 2](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/First_Title.png "The first page title")
-  																	Fig. 2
+                                                                    Fig. 2
 
 In order to avoid a code duplication, the creating of the Title on the first and other pages is performed using methods of the **BankAccountStatement** class that is the base for the page building classes. 
 
@@ -592,7 +592,7 @@ The method takes the parameters:
 
 ![Fig. 3](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementFirst2Panel1.png "Two panels 1")
 
-​																				Fig. 3
+​                                                                               Fig. 3
 
 To create the block in Fig. 3, the  **BankAccountStatementFirstPageBuilder.Build** passes the following actions to the **AddTwoPanels**:
 
@@ -639,7 +639,7 @@ The method to fill the right part of the block shown in Fig. 3
 
 ![Fig. 4](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementFirst2Panel2.png "Two panels 2")
 
-​																					Fig. 4
+​                                                                                   Fig. 4
 
 To create the block shown in Fig. 4, the **BankAccountStatementFirstPageBuilder.Build** passes the following actions to the **AddTwoPanels** method:
 
@@ -802,7 +802,7 @@ The method creates the **Options** block. See Fig. 5
 
 ![Fig. 5](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementFirstOptions.png "Options")
 
-​																				Fig. 5
+​                                                                               Fig. 5
 
 The column is the table with 2 columns with
 * The "*Your Business and SampleBank*" text in the left column;
@@ -951,7 +951,7 @@ The method creates the **Advertisement** block. See Fig. 6.
 
 ![Fig. 6](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementFirstAdvt.png "Advertisement")
 
-​																		Fig. 6
+​                                                                       Fig. 6
 
 The method adds the line separating this block from the previous block. The method adds the paragraph with the advertisement text using the **Helper.AddParagraph**.
 
@@ -1002,7 +1002,7 @@ All *Titles* from the second page (See Fig. 7) contain
 
 ![Fig. 7](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementNextTitle.png "The next page title")
 
-​																				Fig. 7
+​                                                                               Fig. 7
 
 The separate parts of the Title are created using the method of the **BankAccountStatement.AddTitle** base class. 
 
@@ -1025,7 +1025,7 @@ The method adds the "**Overdraft Protection**" block shown in Fig. 8.
 
 ![Fig. 8](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementNextOverdraftProtection.png "Overdraft Protection")
 
-​																			Fig. 8
+​                                                                           Fig. 8
 
 
 The paragraph is added using the **Helper.AddParagraph** method that takes the object of the **Gehtsoft.PDFFlow.Builder.SectionBuilder** class as the parameter.
@@ -1040,7 +1040,7 @@ The method adds the "**Transaction history**" block shown in Fig. 9.
 
 ![Fig. 9](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementNextTransactionhistory.png "Transaction history")
 
-​																							Fig. 9
+​                                                                                           Fig. 9
 
 In order to add the block, the method
 * Adds the line and the "*Transaction history*" title using the **AddStatementsHeadLine** method;
@@ -1254,7 +1254,7 @@ The method adds the "**Service fee summary**" block shown in Fig. 10.
 
 ![Fig. 10](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementNextFeesummary.png "Service fee summary")
 
-​																					Fig. 10
+​                                                                                   Fig. 10
 
 The block consists of 
 * The text paragraph with the "*Monthly service fee summary*" title;
@@ -1490,7 +1490,7 @@ The method adds the "**Transaction fee summary**" block shown in Fig. 11.
 
 ![Fig. 11](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementNextServicefeesummary1.png "Transaction fee summary") 
 
-​																					Fig. 11
+​                                                                                   Fig. 11
 
 The block consists of 
 * the line;
@@ -1670,7 +1670,7 @@ The method adds the "**Polices**" block shown in Fig. 12.
 
 ![Fig. 12](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementLastPolices.png "Polices") 
 
-​																					Fig. 12
+​                                                                                   Fig. 12
 
 The method adds the paragraph with the "*General statement policies for SampleBank*" title using the **Helper.AddParagraph** method that takes the parameter of the **Gehtsoft.PDFFlow.Builder.RepeatingAreaBuilder** class.
 
@@ -1727,7 +1727,7 @@ The method adds the "**Instructions**" and the "**Balance calculation**" blocks 
 
 ![Fig. 13](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/Instruction-calculation.png "Polices") 
 
-​																							Fig. 13
+​                                                                                           Fig. 13
 
 The block is the part of the page with 2 columns.
 Therefore, the method uses  
@@ -1804,7 +1804,7 @@ The methods add the the "**Instructions**" block. See Fig. 14.
 
 ![Fig. 14](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/Instruction2.png "Instructions") 
 
-​																							Fig. 14
+​                                                                                           Fig. 14
 
 The figure is divided the 3 parts added by each method.
 
@@ -1986,7 +1986,9 @@ It is used by the method:
 ###### The methods: **AddEndingBalanceForm**, **AddAnyDepositsForm**, **AddAnyWithdrawalsForm**
 The methods add the input forms in the "**Instructions**" block highlighted in Fig 18 with blue rectangles. 
 
-![Fig. 18](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/Instruction3.png "Forms") Fig. 18
+![Fig. 15](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/Instruction3.png "Forms") 
+
+​                                                                       Fig. 15
 
 The methods add different number of the form rows using the **Helper.AddFormRow**:
 
@@ -2000,9 +2002,11 @@ The **AddAnyWithdrawalsForm** method adds the field in the rectangle to the seco
 
 ###### The AddBalanceCalc method
 
-The method adds the "**Balance calculation**" to the page. See Fig. 19.
+The method adds the "**Balance calculation**" to the page. See Fig. 16.
 
-![Fig. 19](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementLastCalcTable.png "Calculation") Fig. 19
+![Fig. 16](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementLastCalcTable.png "Calculation") 
+
+​                                           Fig. 16
 
 This is the table with 3 columns. The method:
 * Sets the borders for all rows;
