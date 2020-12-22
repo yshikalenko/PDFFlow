@@ -1,4 +1,112 @@
-﻿##### Example: The BankAccountStatement
+﻿# Table of Contents
+
+[Prerequisites](#Prerequisites)
+
+[Purpose](#Purpose)
+
+[Description](#Description)
+
+​    [Output file](#Output file)
+
+​    [1. Open the project in Visual Studio](#1. Open the project in Visual Studio)
+
+​    [2. Run the sample application](#2. Run the sample application)
+
+​    [3. Source code structure](#3. Source code structure)
+
+​    [4. Class Program](#4. Class Program)
+
+​    [5. The BankAccountStatementRunner class](#5. The BankAccountStatementRunner class)
+
+​        [The data format](#The data format)
+​        [The sample-statement-data.json file and Model.Statement class](#The sample-statement-data.json file and Model.Statement class)
+​            [The Model.Statement class](#The Model.Statement class)
+​        [The sample-statement-info-data.json and the Model.Statement class](#The sample-statement-info-data.json and the Model.Statement class)
+​            [The Model.StatementInfo class](#The Model.StatementInfo class:)
+
+​    [6. The BankAccountStatementBuilder class](#6. The BankAccountStatementBuilder class)
+
+​    [7. The BankAccountStatementFirstPageBuilder class](#7. The BankAccountStatementFirstPageBuilder class)
+
+​        [The Title display](#The Title display)
+​        [The BankAccountStatement.AddTitle method](#The BankAccountStatement.AddTitle method)
+​        [The BankAccountStatement.AddTitleWithBankName method](#The BankAccountStatement.AddTitleWithBankName method)
+​        [The BankAccountStatement.AddTextTitle method](#The BankAccountStatement.AddTextTitle method)
+​        [The BankAccountStatement.AddStatementInfoToTitle method](#The BankAccountStatement.AddStatementInfoToTitle method)
+​        [The BankAccountStatement.AddLogo method](#The BankAccountStatement.AddLogo method)
+​        [The AddTwoPanels method](#The AddTwoPanels method)
+​        [The AddCompanyName method](#The AddCompanyName method)
+​        [The AddQuestions method](#The AddQuestions method)
+​        [The AddActivitySummary method](#The AddActivitySummary method)
+​        [The FillActivitySummaryTable method](#The FillActivitySummaryTable method)
+​        [The FillActivitySummaryTableRow method](#The FillActivitySummaryTableRow method)
+​        [The AddAccountInfo method](#The AddAccountInfo method)
+​        [The AddOptions method](#The AddOptions method)
+​        [The AddYourBusiness method](#The AddYourBusiness method)
+​        [The AddOptionsToCell method](#The AddOptionsToCell method)
+​        [The AddCheckBoxes method](#The AddCheckBoxes method)
+​        [The AddAdvt method](#The AddAdvt method)
+
+​    [8. The BankAccountStatementSecondPageBuilder class](#8. The BankAccountStatementSecondPageBuilder class)
+
+​        [The Title display](#The Title display)
+​        [The BankAccountStatement.AddCommonPageTitle method](#The BankAccountStatement.AddCommonPageTitle method)
+​        [The AddOverdraftProtection method](#The AddOverdraftProtection method)
+​        [The AddTransactionHistory method](#The AddTransactionHistory method)
+​        [The AddStatementsHeadLine method](#The AddStatementsHeadLine method)
+​        [The AddStatementsTable method](#The AddStatementsTable method)
+​        [The AddStatementsHead method](#The AddStatementsHead method)
+​        [The AddStatementsHead method](#The AddStatementsHead method)
+​        [The AddStatementsTotal method](#The AddStatementsTotal method)
+​        [The AddEndingDayBalanceComment method](#The AddEndingDayBalanceComment method)
+​        [The AddServiceFeeSummary method](#The AddServiceFeeSummary method)
+​        [The AddServiceFeeSummaryParagrpaph method](#The AddServiceFeeSummaryParagrpaph method)
+​        [The AddServiceFeeSummaryTable method](#The AddServiceFeeSummaryTable method)
+​        [The internal RowData class](#The internal RowData class)
+​        [The internal BottomBorderRowData class](#The internal BottomBorderRowData class)
+​        [The internal ComplexRowData class](#The internal ComplexRowData class)
+​        [The GetServiceFeeSummaryRowData method](#The GetServiceFeeSummaryRowData method)
+​        [The AddTableRows method](#The AddTableRows method)
+​        [The AddTransactionFeeSummary method](#The AddTransactionFeeSummary method)
+​        [The AddTransactionFeeSummaryParagrpaph method](#The AddTransactionFeeSummaryParagrpaph method)
+​        [The AddTransactionFeeSummaryTable method](#The AddTransactionFeeSummaryTable method)
+​        [The GetTransactionFeeSummaryRowData method](#The GetTransactionFeeSummaryRowData method)
+​        [The AddYourFeedBack method](#The AddYourFeedBack method)
+
+​    [9. The BankAccountStatementLastPageBuilder class](#9. The BankAccountStatementLastPageBuilder class)
+
+​        [The AddGeneralStatementPolicies methods](#The AddGeneralStatementPolicies methods)
+​        [The FillGeneralStatementPoliciesTable method](#The FillGeneralStatementPoliciesTable method)
+​        [The AddAccountBalanceCalculationWorksheet method](#The AddAccountBalanceCalculationWorksheet method)
+​        [The AddInstructions method](#The AddInstructions method)
+​        [The AddAboutAccountBalanceCalculationWorksheet method](#The AddAboutAccountBalanceCalculationWorksheet method)
+​        [The GetAboutAccountBalanceCalculationItems method ](#The GetAboutAccountBalanceCalculationItems method )
+​        [The methods: AddInstuctionAboutENTER, AddInstuctionAboutADD, AddInstuctionAboutSUBTRACT](#The methods: AddInstuctionAboutENTER, AddInstuctionAboutADD, AddInstuctionAboutSUBTRACT)
+​        [The AddInstructionTitle method](#The AddInstructionTitle method)
+​        [The ConfigureDescriptionFormTable method](#The ConfigureDescriptionFormTable method)
+​        [The methods: FillEndingBalanceENTER, FillInstructionAnyDeposits, FillInstructionAnyWithdrawals](#The methods: FillEndingBalanceENTER, FillInstructionAnyDeposits, FillInstructionAnyWithdrawals)
+​        [The AddDescriptionRow method](#The AddDescriptionRow method)
+​        [The AddDescriptionToCell method](#The AddDescriptionToCell method)
+​        [The AddCalculateDescriptionToCell method](#The AddCalculateDescriptionToCell method)
+​        [The AddWithdrawalsDescriptionToCell method](#The AddWithdrawalsDescriptionToCell method)
+​        [The AddCalculateEndingBalanceDescriptionToCell method](#The AddCalculateEndingBalanceDescriptionToCell method)
+​        [The methods: AddEndingBalanceForm, AddAnyDepositsForm, AddAnyWithdrawalsForm](#The methods: AddEndingBalanceForm, AddAnyDepositsForm, AddAnyWithdrawalsForm)
+​        [The AddBalanceCalc method](#The AddBalanceCalc method)
+
+​    [10. The Helper class](#10. The Helper class)
+
+​        [The AddParagraph methods](#The AddParagraph methods)
+​        [The ReplaceNullDate method](#The ReplaceNullDate method)
+​        [The ReplaceNullStr method](#The ReplaceNullStr method)
+​        [The ReplaceZeroDouble method](#The ReplaceZeroDouble method)
+​        [The ReplaceZeroInt method](#The ReplaceZeroInt method)
+​        [The AddFormRow method](#The AddFormRow method)
+​        [The AddFormRowBox method](#The AddFormRowBox method)
+​        [The AddNumberedListToParagraph method](#The AddNumberedListToParagraph method)
+
+
+
+##### Example: The BankAccountStatement
 
 The **BankAccountStatement** project is an example of creating a **“Bank Account Statement”** document. The example shows how to create a complex document that includes tables, nested tables and lists. 
 Also it shows how to create forms using tabulation. 
@@ -60,7 +168,8 @@ Fig. 3
 ![Fig. 4](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountStatementLastPage.png "The last page")
 Fig. 4
 
-### Output file
+### Description
+###### Output file
 The example creates the **BankAccountStatement.pdf** file in the output **bin/(debug|release)/netcoreapp2.1** folder, unless otherwise specified on the command line.
 
 #### 1. Open the project in Visual Studio
@@ -130,7 +239,7 @@ The **BankAccountStatementRunner.Run** performs the responsibilities to
 * Build the document.
 It delegates the document building to the **BankAccountStatementBuilder** class using the **Build** method.
 
-#### The data format
+##### The data format
 
 The data of the Account Statement contains in the files of Content/sample-statement-data.json and  Content/sample-statement-info-data.json.
 This data are converted into the objects of the **Model.Statement** class and the **Model.StatementInfo** class respectively.
@@ -169,6 +278,7 @@ This file contains a json array of all operations performed on user's account fo
 The **BankAccountStatementRunner.Run** converts this json array into the list of the objects of the **Model.Statement** class:
 
 ###### The **Model.Statement** class:
+
 ```csharp
 using System;
 using System.Globalization;
@@ -1969,7 +2079,7 @@ This is the table with 3 columns. The method:
 
 
 
-#### 9. The Helper class
+#### 10. The Helper class
 The static class was created in order to avoid a code duplication.
 
 
