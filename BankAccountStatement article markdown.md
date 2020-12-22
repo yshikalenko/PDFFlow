@@ -135,7 +135,9 @@ The last page consists of
 * Balance calculation;
 * Footer.
 
-  ![Fig. 1](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccount_Ill.png "The first page")                                                                                                                                                                      																						Fig. 1
+  ![Fig. 1](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccount_Ill.png "The first page")
+
+​                                                                               Fig. 1
 
 ### Description
 ###### Output file
@@ -423,7 +425,9 @@ It contains
 * The text common to all pages: the account number, the start and end dates of the account statement, and the page numbers;
 
 * The bank logo common to all pages.
-  ![Fig. 2](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/First_Title.png "The first page title")                                                                                                                                                                      																	Fig. 2
+  ![Fig. 2](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/First_Title.png "The first page title")
+
+​                                                                               Fig. 2
 
 In order to avoid a code duplication, the creating of the Title on the first and other pages is performed using methods of the **BankAccountStatement** class that is the base for the page building classes. 
 
