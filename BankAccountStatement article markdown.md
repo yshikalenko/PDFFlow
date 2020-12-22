@@ -1,8 +1,13 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+##### Example: The BankAccountStatement
 
-        - [Example: The BankAccountStatement](#example-the-bankaccountstatement)
+The **BankAccountStatement** project is an example of creating a **“Bank Account Statement”** document. The example shows how to create a complex document that includes tables, nested tables and lists. 
+Also it shows how to create forms using tabulation. 
+Also it show the way to create two-columns page using "Left" and "Right" repeating area.
+
+The example source is available in [repo](https://github.com/gehtsoft-usa/PDF.Flow/tree/master/Examples/BankAccountStatement).
+
+**Table of Contents**
+
 - [Prerequisites](#prerequisites)
 - [Purpose](#purpose)
     - [Description](#description)
@@ -89,15 +94,6 @@
           - [The AddFormRowBox method](#the-addformrowbox-method)
           - [The AddNumberedListToParagraph method](#the-addnumberedlisttoparagraph-method)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-﻿##### Example: The BankAccountStatement
-
-The **BankAccountStatement** project is an example of creating a **“Bank Account Statement”** document. The example shows how to create a complex document that includes tables, nested tables and lists. 
-Also it shows how to create forms using tabulation. 
-Also it show the way to create two-columns page using "Left" and "Right" repeating area.
-
-The example source is available in [repo](https://github.com/gehtsoft-usa/PDF.Flow/tree/master/Examples/BankAccountStatement).
 
 # Prerequisites
 1) **Visual Studio 2017** or above is installed.
@@ -139,7 +135,7 @@ The last page consists of
 * Balance calculation;
 * Footer.
 
-![Fig. 1](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccountIll.png "The first page")
+![Fig. 1](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/BankAccount_Ill.png "The first page")
 Fig. 1
 
 
