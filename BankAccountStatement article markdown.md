@@ -135,7 +135,7 @@ The last page consists of
 * Balance calculation;
 * Footer.
 
-  ![Fig. 1](BankAccount_Ill.png "The first page")
+  ![Fig. 1](Images/BankAccount_Ill.png "The first page")
 
 ​                                                                               Fig. 1
 
