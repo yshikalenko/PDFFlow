@@ -79,7 +79,7 @@ The second, or the back page is a form for the client to fill in the information
 * Text
 * Form
 
-![Fig. 1](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/Medical_Bill_Ill.png "The  pages")
+![Fig. 1](https://yshikalenko.github.io/articles/Images/Medical_Bill_Ill.png "The  pages")
 
 Fig. 1
 
@@ -233,7 +233,7 @@ This responsibility is performed by the Build method. It creates the objects in 
 Responsibility:
 * Create the Header of the page. See. Fig. 2.
 
-![Fig. 2](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/MedicalBillFrontHead.png "The front side header")
+![Fig. 2](https://yshikalenko.github.io/articles/Images/MedicalBillFrontHead.png "The front side header")
 
 Fig. 2
 
@@ -289,7 +289,7 @@ etc.
 
 Responsibility:
 * Create the table of the Medicall Bil calculationl. See. Fig. 3
-![Fig. 3](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/MedicalBillFrontBody.png "The front side of the table of calculation")
+![Fig. 3](https://yshikalenko.github.io/articles/Images/MedicalBillFrontBody.png "The front side of the table of calculation")
 
 Fig. 3
 
@@ -349,7 +349,7 @@ etc.
 
 Responsibility:
 * Create the bottom part of the Medicall Bill. See. Fig. 4
-![Fig. 4](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/MedicalBillFrontBottom.png "The front side of the table of calculation")
+![Fig. 4](https://yshikalenko.github.io/articles/Images/MedicalBillFrontBottom.png "The front side of the table of calculation")
 
 Fig. 4
 
@@ -617,7 +617,7 @@ This information represents 2 identical blocks at the very bottom of the front p
 ### 12. The **MedicalBillBackTextBuilder** class
 
 Responsibility: Create the block of text on the second (the back) page of the document
-![Fig. 5](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/MedicalBillBackText.png "The text of the back page")
+![Fig. 5](https://yshikalenko.github.io/articles/Images/MedicalBillBackText.png "The text of the back page")
 
 Fig. 5. 
 
@@ -864,7 +864,7 @@ The method adds a peice of text to the paragraph.
 
 
 Responsibility: Build the block of forms on the second (the back) page of the document. 
-![Fig. 6](http://srv-dev0.gehtsoft.com:8080/PDFFlow/Images/MedicalBillBackForm.png "The back side of the Form")
+![Fig. 6](https://yshikalenko.github.io/articles/Images/MedicalBillBackForm.png "The back side of the Form")
 
 Fig. 6. 
 
